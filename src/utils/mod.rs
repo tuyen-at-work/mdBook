@@ -232,6 +232,7 @@ fn clean_codeblock_headers(event: Event<'_>) -> Event<'_> {
                 .chars()
                 .map(|x| match x {
                     ' ' => ',',
+                    '\t' => ',',
                     _ => x,
                 })
                 .filter(|ch| !ch.is_whitespace())
